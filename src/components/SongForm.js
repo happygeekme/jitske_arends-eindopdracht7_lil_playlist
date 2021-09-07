@@ -12,7 +12,6 @@ class SongForm extends React.Component {
   }
 
   render() {
-    
     const onInputTitle = (event) => {
       this.setState({
         title: event.target.value,
@@ -71,6 +70,8 @@ class SongForm extends React.Component {
             <option value="rock">Rock</option>
             <option value="dance">Dance</option>
             <option value="lounge">Lounge</option>
+            <option value="jazz">Jazz</option>
+            <option value="pop">Pop</option>
           </select>
 
           <select

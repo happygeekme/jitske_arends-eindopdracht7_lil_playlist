@@ -2,6 +2,11 @@ body {
   background-color: rgb(130, 193, 196);
 }
 
+table {
+  width: 90%;
+  border-collapse: collapse;
+}
+
 .App {
   text-align: center;
   color: white;
@@ -53,13 +58,27 @@ body {
   background-color: darkcyan;
 }
 
-.song-row__item {
-  width: 20%;
+.column-song {
+  width: 35%;
+}
+
+.column-artist {
+  width: 35%;
+}
+
+.column-genre {
+  width: 10%;
+}
+
+.column-rating {
+  width: 10%;
+}
+
+.column-remove {
+  width: 10%;
 }
 
 .listed-song {
   background-color: rgb(199, 228, 228);
   color: darkcyan;
 }
-
-

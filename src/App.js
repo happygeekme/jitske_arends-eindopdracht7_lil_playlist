@@ -1,11 +1,11 @@
-import React from 'react'
-import './App.css';
-import SongOverview from './components/songOverview';
+import React from "react";
+import "./App.css";
+import SongOverview from "./components/songOverview";
 
 function App() {
   return (
     <div className="App">
-      <h3>Jitske Lil' liedjeslijst</h3>
+      <h3>Jitske's PlayList</h3>
       <SongOverview />
     </div>
   );
