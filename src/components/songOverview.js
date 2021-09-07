@@ -1,6 +1,7 @@
 import React from "react";
 import SongForm from "./SongForm";
 import SongList from "./SongList";
+import SongFilter from "./SongFilter"
 
 class SongOverview extends React.Component {
   constructor() {
@@ -11,9 +12,7 @@ class SongOverview extends React.Component {
   }
 
   addSong = (song) => {
-    console.log(song);
     this.setState((prevState) => {
-      console.log(prevState);
       const newList = prevState.songs.concat(song);
       return {
         songs: newList,
@@ -22,22 +21,43 @@ class SongOverview extends React.Component {
   };
 
   removeSong = (id) => {
-    console.log(id);
     this.setState((prevState) => {
       const songs = prevState.songs;
       const newList = songs.filter((song, index) => index !== id);
-      console.log(newList);
       return {
         songs: newList,
       };
     });
   };
 
+  filterGenre = (event) => {
+    this.setState((prevState) => {
+      const songs = prevState.songs
+      const genre = event.target.value;
+      const filteredList = songs.filter(song => song.genre === genre)
+      return {
+        songs: filteredList
+      }
+  })
+}
+
+  filterRating = (event) => {
+    this.setState((prevState) => {
+      const songs = prevState.songs
+      const rating = event.target.value;
+      const filteredList = songs.filter(song => song.rating === rating)
+      return {
+        songs: filteredList
+      }
+  })
+}
+
   render() {
     return (
       <div className="song-overview">
         <SongForm onSubmit={this.addSong} />
-        <table className="song-table">
+        <SongFilter songs={this.state.songs} onFilterGenre={this.filterGenre} onFilterRating={this.filterRating}/>
+        <table className="song-table" >
           <tbody>
             <tr className="song-header">
               <th className="song-row__item">Song</th>

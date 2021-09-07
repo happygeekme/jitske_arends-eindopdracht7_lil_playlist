@@ -1,9 +1,9 @@
 import React from "react";
 
 function Song(props) {
-    
+
   return (
-    <tr className="listedSong" value={props.title} id={props.id}>
+    <tr className="listed-song" value={props.title} id={props.id}>
       <td>{props.title}</td>
       <td>{props.artist}</td>
       <td>{props.genre}</td>

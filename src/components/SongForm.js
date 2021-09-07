@@ -12,6 +12,7 @@ class SongForm extends React.Component {
   }
 
   render() {
+    
     const onInputTitle = (event) => {
       this.setState({
         title: event.target.value,
